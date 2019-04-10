@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Huset</title>
+</head>
+<body>
+  <header>
+    <label for="menu" class="burgerMenu">
+        &#9776;
+    </label>
+    <input type="checkbox" id="menu">
+
+    <nav>
+      <img src="Images/default-image.png" class="logo" alt="logo">
+      <div class="wrapper">
+
+  <button class="collapsible">Board Games</button>
+  <div class="content">
+     <a href="#">BastardCafe</a> <br> <br>
+     <a href="#">I dont know</a>
+
+  </div>
+  <button class="collapsible">Music</button>
+  <div class="content">
+    <a href="#">BastardCafe</a> <br> <br>
+    <a href="#">Jazz</a>
+  </div>
+  <button class="collapsible">Food</button>
+  <div class="content">
+    <a href="#">BastardCafe</a> <br> <br>
+  </div>
+  <button class="collapsible">Join huset</button>
+  <div class="content">
+    <a href="#">Volunteering</a> <br> <br>
+    <a href="#">About us</a> <br> <br>
+
+  </div>
+</div>
+    </nav>
+</header>
+<body>
+
+
+  <script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
+  </script>
+
+  </body>
+  </html>
+

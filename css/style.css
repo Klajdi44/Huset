@@ -1,0 +1,86 @@
+nav {
+  display: none;
+}
+
+#menu:checked ~ nav {
+  display: block;
+
+}
+
+#menu {
+  display: none;
+
+}#menu1:checked ~ nav {
+  display: block;
+
+}
+
+#menu1 {
+  display: none;
+
+}
+
+.burgerMenu {
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  color: yellowgreen;
+  margin-right: 1.5em;
+  margin-top: .5em;
+  font-size: 2em;
+  cursor: pointer;
+}
+.collapsible {
+  background-color: #777;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 1.1em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1em;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+
+}
+
+.wrapper{
+  padding-top:5em;
+
+
+}
+a{
+  text-decoration: none;
+  color: #333;
+
+
+}
+.logo{
+  width:50vw ;
+
+
+}
