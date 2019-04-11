@@ -12,3 +12,7 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+function myFunction(){
+const burgermeny = document.getElementsByClassName("burgerMenu");
+burgermeny.classList.add('.slide-top ');}
