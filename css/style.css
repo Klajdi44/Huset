@@ -33,17 +33,18 @@ nav {
     position: absolute;
   top: 0;
   right: 0;
-  color: #333;
+  color: #fff;
   margin-right: 1.5em;
   margin-top: .5em;
   font-size: 2em;
+    z-index: 1;
   cursor: pointer;
     animation:   rotate-scale-down 1s;
 
 }
 
 .collapsible {
-  background-color: #777;
+  background-color: #333;
   color: rgb(255, 255, 255);
   cursor: pointer;
   padding: 1.1em;
@@ -52,7 +53,41 @@ nav {
   text-align: left;
   outline: none;
   font-size: 1em;
+    border: 1px #fff solid;
 }
+
+/*
+.collapsible:nth-child(1) {
+  background: #d71634;
+}
+.collapsible:nth-child(3) {
+  background: #e1b427;
+}
+.collapsible:nth-child(3) {
+  background: #e1b427;
+}
+*/
+
+
+
+
+.pimg1{
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../Images/graphic.jpg);
+    min-height: 100vh;
+    background-attachment: fixed;
+    /* if YOU WANT TO REMOVE THE PARALLAX EFFECT THEN DO THIS :D
+    fixed = parallax
+    scroll = normal
+    */
+}
+
+
+
 
 .active, .collapsible:hover {
   background-color: #555;
@@ -153,3 +188,7 @@ a{
   }
 }
 
+
+.adjuster {
+padding: 1em;    position: relative;
+}
