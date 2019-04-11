@@ -113,17 +113,16 @@ nav {
 
 }
 
-.wrapper{
-  padding-top:5em;
 
-
-}
 a{
   text-decoration: none;
   color: #333;
-
-
 }
+a:hover{
+  text-decoration: underline;
+}
+
+
 .logo{
   width:50vw ;
     margin: 0 auto;
@@ -189,6 +188,48 @@ a{
 }
 
 
-.adjuster {
-padding: 1em;    position: relative;
+.content .adjuster {
+    margin-left: 3em;
+    border-bottom: 1px solid;
+    width: 3%;
 }
+
+footer {
+    display: inline;
+ width: 10em;
+    height: 10em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+
+}
+
+.sign{
+    font-size: 2em;
+    margin: 3em;
+    place-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
