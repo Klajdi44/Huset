@@ -14,11 +14,13 @@
             &#9776;
         </label>
         <input type="checkbox" id="menu">
-
+        <img src="Images/default-image.png" class="logo" alt="logo">
         <nav>
-            <img src="Images/default-image.png" class="logo" alt="logo">
+    
             <div class="wrapper">
-
+				<div class="buttonLink">
+					<a href="#" class="buttonA">Events</a>
+				</div>
                 <button class="collapsible">Venue</button>
                 <div class="content">
                     <a href="#">BastardCafe</a>
@@ -35,12 +37,7 @@
                     <a href="#">Volunteering</a>
                     <a href="#">Contact Us</a>
                     <a href="#">For Media</a>
-
-
-
                     <a href="#">Visual Identity</a>
-
-
                 </div>
 
                 <button class="collapsible">Rent A Venue</button>
@@ -54,33 +51,56 @@
 
                 </div>
 
-                <button class="collapsible">Filters</button>
-                <div class="content">
-                    <br> <a href="#">All Filters</a>
-                    <a href="#">Genre </a>
-                    <a  href="#">Music </a>
-                    <a class="adjuster" href="#">Jazz </a>
-                    <a class="adjuster" href="#">Rock </a>
-                    <a class="adjuster" href="#">Punk </a>
-                    <a class="adjuster" href="#">Hip Hop </a>
-                    <a class="adjuster" href="#">Folk</a>
-                    <a class="adjuster" href="#">Pop </a>
-                    <a class="adjuster" href="#">World </a>
-                    <a href="#">Words </a>
-                    <a href="#">Scene Art</a>
-                    <a href="#">Film</a>
-                </div>
-
-
-
             </div>
         </nav>
     </header>
-
-
-
+	
     <div class="pimg1">
-
+		<br>
+		<div id="PageContent">
+			<h1 id="PageTitle">Events</h1>
+			<div id="EventFilters">
+				<button onclick="showFilters()">Filters</button>
+				<div id="FiltersContent" class="hidden">
+					<ul>
+						<li><h3>All Events</h3></li>
+						<li>
+							<h3>Genre</h3>
+							<ul class='inner'>
+								<li><h4>Music</h4></li>
+								<li><input type="checkbox">Jazz </input></li>
+								<li><input type="checkbox">Rock </input></li>
+								<li><input type="checkbox">Punk </input></li>
+								<li><input type="checkbox">Hip Hop </input></li>
+								<li><input type="checkbox">Folk</input></li>
+							</ul>
+							<ul class='inner'>
+								<li><h4>Film</h4></li>
+								<li><input type="checkbox">Horror </input></li>
+								<li><input type="checkbox">Drama </input></li>
+								<li><input type="checkbox">Comedy </input></li>
+							</ul>
+						</li>
+						<li>
+							<h3>Venue</h3>
+							<ul class='inner'>
+								<li><input type="checkbox">BastardCafe </input></li>
+								<li><input type="checkbox">Xenon </input></li>
+								<li><input type="checkbox">Cinema </input></li>
+								<li><input type="checkbox">Stardust </input></li>
+								<li><input type="checkbox">Balsalen</input></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>		
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+		</div>
     </div>
 
 
@@ -88,11 +108,11 @@
 
     <script src="javaScript/script.js"></script>
     <footer>
-            <button class="sign"> Facebook</button>
-            <button class="sign"> Instagram</button>
-            <button class="sign"> Sign up</button>
-            <button class="sign"> Youtube</button>
-
+            <img class="icon" src='Images/facebook.png'>
+            <img class="icon" src='Images/instagram.png'>
+            <img class="icon" src='Images/youtube.png'>
+			<img class="icon" src='Images/twitter.png'>
+			<img class="icon" src='Images/signup.png'>
     </footer>
 
 </body>
