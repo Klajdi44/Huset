@@ -37,3 +37,61 @@ function myFunction(){
 function showFilters() {
 	eventfiltersContent.classList.toggle('hidden');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Klajdi's part starts here
+
+let myLink = "http://www.lasimi.com/lasimi/kea2/wp-json/wp/v2/boardgame?_embed";
+const template = document.querySelector('template').content;
+const parent =  document.querySelector('main');
+
+function loadData(link){
+fetch(link).then(e=>e.json()).then(data=>show(data))
+}
+
+
+
+function show(data){
+    data.forEach(Object=>{
+        console.log(Object);
+
+        //clone the template
+        const clone = template.cloneNode(true);
+
+        //polulate it
+        const h1 = clone.querySelector('h1');
+        const section = clone.querySelector('section');
+
+        h1.innerHTML = Object.title.rendered;
+      section.innerHTML= Object.content.rendered;
+        clone.querySelector('img').src=Object._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
+
+
+
+        //_embedded[""wp:featuredmedia""][""0""].author get the author
+        //apend to dom
+       parent.appendChild(clone);
+    })
+
+
+}
+
+loadData(myLink);

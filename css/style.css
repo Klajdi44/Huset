@@ -1,7 +1,8 @@
 body{
 margin: 0;
     padding: 0;
-    background-color: lightgray;
+    background-color: #fff;
+
 
 }
 
@@ -95,7 +96,7 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../Images/graphic.jpg);
-    min-height: 100vh;
+    min-height: 30vh;
     background-attachment: fixed;
     /* if YOU WANT TO REMOVE THE PARALLAX EFFECT THEN DO THIS :D
     fixed = parallax
@@ -235,30 +236,14 @@ footer img {
 #PageTitle {
 	text-align:center;
 	margin-top:0;
-	padding-top:1em;
 }
 
 #PageContent {
 	margin:1em;
 	background-color:rgba(255,255,255,0.7);
+    padding: 3em;
 }
 
-#EventFilters {
-	margin: 2em;
-}
-
-#EventFilters > button{
-  background-color: #333;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  padding: 1.1em;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 1em;
-  border: 1px #fff solid;
-}
 
 ul {
 	list-style: none
@@ -276,11 +261,51 @@ ul.inner {
 	display:none;
 }	
 
+main {
+margin: 0em 1em ;
+    display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+      grid-gap: 2em;
+
+}
+
+   article{
+       background: #fff;
+
+       margin-bottom: 5em;
+          background-color: #000;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, .7);
+    border-radius: 10px;
+         }
+
+article:hover{
+background-color: rgb(90, 10, 55);
+
+}
+article p {
+     margin: .2em;
+
+    width: 100%;
+    color: #fff;
+
+}
+article h1 {color:#fff}
 
 
 
 
 
+
+
+
+article img {
+    border: 1px solid #fff;
+    margin:0;
+    padding: 0;
+border-radius: 10px;
+width: 100%;
+
+}
 
 
 
