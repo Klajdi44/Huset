@@ -82,7 +82,7 @@ function show(data){
 
         h1.innerHTML = Object.title.rendered;
       section.innerHTML= Object.content.rendered;
-        clone.querySelector('img').src=Object._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
+        clone.querySelector('img').src=Object._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
 
 
 
