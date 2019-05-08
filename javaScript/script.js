@@ -1,115 +1,33 @@
-const  coll = document.getElementsByClassName("collapsible");
-  let i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    const content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-}
-
-const pageTitle = document.getElementById("PageTitle");
-const eventFilters = document.getElementById("EventFilters");
-const eventfiltersContent = document.getElementById("FiltersContent");
-
-Array.from(document.getElementsByTagName('a')).forEach(element => {
-	element.onclick = function() { 
-		pageTitle.innerHTML = (element.innerHTML);
-		if (element.innerHTML != 'Events') {
-			eventFilters.style.display = 'none';
-		} else {
-			eventFilters.style.display = 'block';
-		}		
-		
-	};
-});
-
-function myFunction(){
-	const burgermeny = document.getElementsByClassName("burgerMenu");
-	burgermeny.classList.add('.slide-top ');
-}
-
-function showFilters() {
-	eventfiltersContent.classList.toggle('hidden');
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Klajdi's part starts here
 const template = document.querySelector('template').content;
-let myLink = "http://www.lasimi.com/lasimi/kea2/wp-json/wp/v2/boardgame?_embed";
+let myLink = "http://www.lasimi.com/lasimi/kea2/wp-json/wp/v2/cinema?_embed";
+
+function loadData(link) {
+    fetch(link).then(e => e.json()).then(data => show(data))
+}
+
 const parent =  document.querySelector('main');
 
-function loadData(link){
-fetch(link).then(e=>e.json()).then(data=>show(data))
-}
-
-
-
-function show(data){
-    data.forEach(Object=>{
-        console.log(Object);
-
-        //clone the template
+function show(data) {
+    data.forEach(object => {
         const clone = template.cloneNode(true);
-
-        //polulate it
-        const h1 = clone.querySelector('h1');
-        const h3 = clone.querySelector('h3');
-        const h4 = clone.querySelector('h4');
-        const section = clone.querySelector('section');
-
-        clone.querySelector("a").href = "details.html?BoardgameID="+Object.id;
-
-        h1.innerHTML = Object.title.rendered;
-        h3.textContent = Object.time;
-      section.innerHTML= Object.content.rendered;
-        clone.querySelector('img').src=Object._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-        h4.textContent = Object.rating;
-
-
-
-
-//
-//    if(h4 <=5){
-//   document.querySelector('h4').style.color = 'red';
-//
-//
-// }else if (h4 <=7){
-// document.querySelector('h4').style.color = 'orange';
-//
-// }else {document.querySelector('h4').style.color = 'green';
-// }
-
-
-        //_embedded[""wp:featuredmedia""][""0""].author get the author
-        //apend to dom
-       parent.appendChild(clone);
+        clone.querySelector('img.preview').src = object._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+        clone.querySelector('h1.title').innerHTML = object.title.rendered;
+        clone.querySelector('h3.time').innerHTML = object.datetime;
+        clone.querySelector('.ticketPrice').innerHTML = object.ticket_price;
+        clone.querySelector('section.description').innerHTML = object.content.rendered;
+        clone.querySelector('.player').src = 'https://www.youtube.com/embed/' + object.videos.split(';')[0] + '?feature=oembed';
+        parent.appendChild(clone);
     })
-
-
 }
 
 loadData(myLink);
+
+function expand(article) {
+    Array.from(document.getElementsByClassName("post")).forEach(post=>{
+      if (post != article) post.classList.toggle('hidden');
+    });
+    article.querySelector(".price").classList.toggle("hidden");
+    article.querySelector(".description").classList.toggle("hidden");
+    article.querySelector(".trailer").classList.toggle("hidden");
+    article.querySelector(".social").classList.toggle("hidden");
+}
