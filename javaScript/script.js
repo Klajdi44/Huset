@@ -78,15 +78,30 @@ function show(data){
         //polulate it
         const h1 = clone.querySelector('h1');
         const h3 = clone.querySelector('h3');
+        const h4 = clone.querySelector('h4');
         const section = clone.querySelector('section');
 
         clone.querySelector("a").href = "details.html?BoardgameID="+Object.id;
 
         h1.innerHTML = Object.title.rendered;
-        h3.innerHTML = Object.time;
+        h3.textContent = Object.time;
       section.innerHTML= Object.content.rendered;
         clone.querySelector('img').src=Object._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+        h4.textContent = Object.rating;
 
+
+
+
+//
+//    if(h4 <=5){
+//   document.querySelector('h4').style.color = 'red';
+//
+//
+// }else if (h4 <=7){
+// document.querySelector('h4').style.color = 'orange';
+//
+// }else {document.querySelector('h4').style.color = 'green';
+// }
 
 
         //_embedded[""wp:featuredmedia""][""0""].author get the author

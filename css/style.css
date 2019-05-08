@@ -337,3 +337,53 @@ margin-bottom: 10px;
     border: none;
 
 }
+
+
+.time {
+text-align: center;
+    color: #fff;
+
+}
+
+
+
+
+
+.rating {
+    width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 50%;
+          display:grid;
+    place-items:center;
+    transform: translateY(3em);
+    margin-left: .3em;
+   }
+
+
+#main {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+     grid-template-areas:
+        "img  details"
+        "img  description"
+}
+
+
+
+.imgDetails{
+    grid-area: img;
+
+}
+
+.details{
+    grid-area: details;
+
+}
+.description{
+grid-area: description;
+
+}
+
