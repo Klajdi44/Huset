@@ -58,9 +58,8 @@ function showFilters() {
 
 
 //Klajdi's part starts here
-
-let myLink = "http://www.lasimi.com/lasimi/kea2/wp-json/wp/v2/boardgame?_embed";
 const template = document.querySelector('template').content;
+let myLink = "http://www.lasimi.com/lasimi/kea2/wp-json/wp/v2/boardgame?_embed";
 const parent =  document.querySelector('main');
 
 function loadData(link){
@@ -78,9 +77,13 @@ function show(data){
 
         //polulate it
         const h1 = clone.querySelector('h1');
+        const h3 = clone.querySelector('h3');
         const section = clone.querySelector('section');
 
+        clone.querySelector("a").href = "details.html?BoardgameID="+Object.id;
+
         h1.innerHTML = Object.title.rendered;
+        h3.innerHTML = Object.time.rendered;
       section.innerHTML= Object.content.rendered;
         clone.querySelector('img').src=Object._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
 

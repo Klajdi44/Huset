@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Huset</title>
+</head>
+<body>
+
+   <button><a href="index.html"> &laquo;Back</a></button>
+    <main>
+    <h1>title</h1>
+      <img alt="img">
+        <div class="description"></div>
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+ <script>
+     //take the link
+ const baseLink = "http://www.lasimi.com/lasimi/kea2/wp-json/wp/v2/boardgame/";
+    const  URLparam = new URLSearchParams(window.location.search);
+     const BoardgameID = URLparam.get("BoardgameID");
+
+     //console.log(baseLink+BoardgameID+"?_embed");
+
+     fetch(baseLink+BoardgameID+"?_embed").then(e=>e.json()).then(showBoardGame);
+
+     function showBoardGame(object){
+    console.log(object);
+      document.querySelector("h1").textContent = object.title.rendered;
+         document.querySelector('img').src=object._embedded["wp:featuredmedia"][0].source_url;
+         document.querySelector(".description").innerHTML = object.longdescription;
+
+
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+    <footer>
+        <img class="icon" src='Images/facebook.png'>
+        <img class="icon" src='Images/instagram.png'>
+        <img class="icon" src='Images/signup.png' style="width: 6.5em;">
+
+        <img class="icon" src='Images/youtube.png'>
+        <img class="icon" src='Images/twitter.png'>
+    </footer>
+
+</body>
+  </html>
