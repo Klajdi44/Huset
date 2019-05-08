@@ -1,7 +1,11 @@
+*{
+font-family: helvetica;
+}
+
 html,body{
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #fff;
 }
 
 
@@ -34,7 +38,7 @@ nav {
     position: absolute;
     top: 0;
     right: 0;
-    color: #fff;
+    color: #000;
     margin-right: 1em;
     margin-top: 1em;
     font-size: 2em;
@@ -92,12 +96,12 @@ nav {
 
 .pimg1 {
     position: relative;
-    opacity: 0.70;
+    opacity: 0.95;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url(../Images/chess.png);
-    min-height: 60vh;
+    min-height: 70vh;
     background-attachment: fixed;
     /* if YOU WANT TO REMOVE THE PARALLAX EFFECT THEN DO THIS :D
     fixed = parallax
@@ -270,11 +274,7 @@ ul.inner {
 }
 
 main {
-    background-image: url(../Images/dark-table-texture-lisaasmith-com-innovative-3927x1745.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+
     margin: 0em 1em;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
@@ -285,28 +285,32 @@ main {
 
 article {
     margin-bottom: 5em;
-    background-color: #333;
-    box-shadow: 0 20px 50px rgba(88, 88, 88, 0.3);
+    background-color: #000;
+    box-shadow: 0 20px 50px rgba(88, 88, 88, 0.7);
     border-radius: 10px;
 }
 
 article:hover {
-    background-color: rgb(90, 10, 55);
-
+    background-color:  #262626;
 }
 
 article p {
     left: 2em;
     right: 2em;
     width: 100%;
-    color: #fff;
-    text-align:center;
+    color: #dddddd;
+    line-height: 1.5em;
+    font-size: 1.2em;
 
 
 }
 
+section {
+padding: 0em 2em;
+}
 article h1 {
-    color: #c6c626;
+    color: #fff;
+    font-weight: 700;
     text-align: center;
     border-bottom: 2px solid #646262;
 
@@ -319,5 +323,17 @@ article img {
     padding: 0;
     border-radius: 10px;
     width: 100%;
+
+}
+
+.modalButton{
+    font-size: 1.3em;
+    padding: .5em;
+    border-radius: 10px;
+   text-overflow:inherit;
+display: block;
+  margin: auto;
+margin-bottom: 10px;
+    border: none;
 
 }
