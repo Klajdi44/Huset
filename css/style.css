@@ -101,11 +101,26 @@ nav {
     background-repeat: no-repeat;
     background-image: url(../Images/chess.png);
     min-height: 70vh;
-    background-attachment: sc;
+    background-attachment: scroll;
     /* if YOU WANT TO REMOVE THE PARALLAX EFFECT THEN DO THIS :D
     fixed = parallax
     scroll = normal
     */
+}
+
+.pimg2 {
+    text-align: center;
+    margin: auto;
+    background: #000;
+    color: #fff;
+    width: 50%;
+    font-size: 2em;
+    padding: .2em;
+    border-radius: 5%;
+    transform: translateY(-1em);
+
+
+
 }
 
 
