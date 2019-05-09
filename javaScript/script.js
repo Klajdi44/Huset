@@ -1,5 +1,5 @@
 const template = document.querySelector('template').content;
-let myLink = "http://www.lasimi.com/lasimi/kea2/wp-json/wp/v2/cinema?_embed";
+let myLink = "http://www.lasimi.com/lasimi/kea2/wp-json/wp/v2/MusicEvents?_embed";
 
 function loadData(link) {
     fetch(link).then(e => e.json()).then(data => show(data))
@@ -10,12 +10,23 @@ const parent =  document.querySelector('main');
 function show(data) {
     data.forEach(object => {
         const clone = template.cloneNode(true);
-        clone.querySelector('img.preview').src = object._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+        clone.querySelector('img.preview').src = object.photo.guid;
         clone.querySelector('h1.title').innerHTML = object.title.rendered;
-        clone.querySelector('h3.time').innerHTML = object.datetime;
+        let newTime = object.timedate;
+        clone.querySelector('h3.time').innerHTML = newTime.substring(0, newTime.length -3);
         clone.querySelector('.ticketPrice').innerHTML = object.ticket_price;
         clone.querySelector('section.description').innerHTML = object.content.rendered;
-        clone.querySelector('.player').src = 'https://www.youtube.com/embed/' + object.videos.split(';')[0] + '?feature=oembed';
+
+        clone.querySelector('h4').textContent= object.short_description;
+
+        clone.querySelector('.longDes').textContent= object.band_description;
+        clone.querySelector('.player').src = 'https://www.youtube.com/embed/' + object.video.split(',')[0] + '?feature=oembed';
+        parent.appendChild(clone);
+
+
+
+
+
         parent.appendChild(clone);
     })
 }

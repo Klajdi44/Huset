@@ -94,6 +94,8 @@ footer img {
 .buttonIcon {
     max-height:1.7em;
     top:30px;
+    color: #fff;
+
 }
 
 /* phone  */
@@ -271,4 +273,20 @@ article img {
     grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
     text-align: center;
 
+}
+
+
+.shortDescription{
+ color: #FFF;
+    padding: 0em 1em;
+
+}
+.longDes {
+    color:#fff;
+    padding: 0em 1em;
+}
+
+.description p {
+    text-align: center;
+    color: yellow;
 }
