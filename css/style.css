@@ -443,6 +443,14 @@ article:hover {
 }
 
 
+.buttonLabel {
+    font-size:1.6em;
+    margin:0;
+    padding:0;
+    margin-left:1em;
+}
+
+
 @media all and (min-width: 800px) {
 
     #main {
