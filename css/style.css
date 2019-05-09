@@ -41,6 +41,7 @@ main {
 
 header {
     position: fixed;
+    z-index:1000;
     width:100%;
     background-position: left top;
     background-repeat: no-repeat;
@@ -228,6 +229,8 @@ nav {
 
 
 article {
+    overflow:hidden;
+    position:relative;
     margin-bottom: 5em;
     background-color: #001644;
     box-shadow: 0 20px 50px rgba(88, 88, 88, 0.7);
@@ -235,7 +238,7 @@ article {
 }
 
 article:hover > .title {
-    color: red;
+    color: #d71634;
 }
 
 article p {
@@ -256,6 +259,7 @@ article h1 {
     font-weight: 700;
     text-align: center;
     border-bottom: 2px solid #646262;
+    cursor: pointer;
 }
 
 article img {
@@ -268,7 +272,87 @@ article img {
 .social {
     color:white;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+    grid-template-columns: 1fr 1fr;
     text-align: center;
+}
 
+article:hover {
+    transform: scale(1.03);
+    transition: .3s;
+} 
+
+.forum:hover {
+    color: #d71634;
+}
+
+article.focused {
+    transform: scale(1) !important;
+    transition: .0s !important;
+}
+
+article.focused > .title {
+    color: white !important;
+}
+
+p.review, p.forumPost {
+    margin-bottom: 5em;
+    background-color: white;
+    box-shadow: 0 20px 50px rgba(88, 88, 88, 0.7);
+    border-radius: 10px;
+    color:black;
+    margin-top: 0; 
+}
+
+.back {
+    position:absolute;
+    top:0.1em;
+    right:0.1em;
+    font-size:3.0em;
+    width:1.2em;
+    height:1.2em;
+    background-color:transparent;
+    border-color:none;
+    border-width: 0;
+    color:white;
+    outline: none;
+}
+
+.back:hover { 
+    color:#d71634;
+}
+
+.buttonBackground {
+    position: absolute;
+    top: -5em;
+    right: -5em;
+    transform: rotate(45deg);
+    width: 10em;
+    height: 10em;
+    background-color: black;
+}
+
+.reviews, .discussions {
+
+    grid-column: 1 /span 2;
+    margin-left:20em;
+    margin-right:20em;
+    display:grid;
+    grid-template-columns: 1fr 10fr;
+}
+
+.forumPic {
+    width:3em;
+    height:4em;
+    background-color:white;
+    border-width:2px;
+    border-color:black;
+    border-radius:1em;
+}
+
+article h2 {
+    color:white;
+}
+
+.menuButton:hover {
+    background-color:#d71634;
 }

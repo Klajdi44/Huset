@@ -22,18 +22,18 @@
         </div>
         <nav>
             <div class="wrapper">
-                <div class="menuButton"><img class="buttonIcon" src="Images/cinema_icon.png"><p class="buttonLabel">Movie Events</p></div>
-                <div class="menuButton"><img class="buttonIcon" src="Images/about_icon.png"><p class="buttonLabel">About Huset</p></div>
-                <div class="menuButton"><img class="buttonIcon" src="Images/contact.png"><p class="buttonLabel">Contact</p></div>
+                <div class="menuButton" onclick="loadEvents()"><img class="buttonIcon" src="Images/cinema_icon.png"><p class="buttonLabel">Movie Events</p></div>
+                <div class="menuButton" onclick="loadAbout()"><img class="buttonIcon" src="Images/about_icon.png"><p class="buttonLabel">About Huset</p></div>
+                <div class="menuButton" onclick="loadContact()"><img class="buttonIcon" src="Images/contact.png"><p class="buttonLabel">Contact</p></div>
             </div>
         </nav>
     </header>
 
     <main id="mainSection"></main>
-    <template>
-        <article class="post" onclick="expand(this)">
+    <template id="postTemplate">
+        <article class="post">
             <img class="preview">
-            <h1 class="title">Title goes here</h1>
+            <h1 class="title" onclick="expand(this.parentNode)">Title goes here</h1>
             <h3 class="time"></h3>
             <h3 class="price hidden">Ticket price:&nbsp;<label class="ticketPrice"></label>&nbsp;DKK</h3>
             <section class="description hidden"></section>
@@ -41,12 +41,31 @@
                     <iframe class="player" width="420" height="315"
                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </section>
+            <div class="buttonBackground hidden"></div>
+            <button class="back hidden" onclick="expand(this.parentNode)">X</button>
             <div class="social hidden">
-                <h3>Reviews</h3>
-                <h3>Discussions</h3>
+                <h3 class="forum" onclick="expandForum(this.parentNode, 'reviews')">Reviews</h3>
+                <h3 class="forum" onclick="expandForum(this.parentNode, 'discussions')">Discussions</h3>
+                <div class="reviews hidden">
+                    <img src="Images/bob.png"><p class="review">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <img src="Images/bob.png"><p class="review">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="discussions hidden">
+                    <div class="forumPic"><img src="Images/putin.jpg"></div><p class="forumPost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <div class="forumPic"><img src="Images/dexter.gif"></div><p class="forumPost">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p> 
+                    <div class="forumPic"><img src="Images/kaczynski.jpg"></div><p class="forumPost">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
             </div>
         </article>
     </template>
+    <template id="aboutTemplate">
+        <article class="post focused">
+            <img class="preview">
+            <h1 class="title">Title goes here</h1>
+            <section class="description"></section>
+        </article>
+    </template>
+
     <footer>
         <img class="icon" src='Images/facebook.png'>
         <img class="icon" src='Images/instagram.png'>
