@@ -84,7 +84,9 @@ function show(data){
         clone.querySelector("a").href = "details.html?BoardgameID="+Object.id;
 
         h1.innerHTML = Object.title.rendered;
+        let newTime = Object.time;
         h3.textContent = Object.time;
+        clone.querySelector('h3').innerHTML = newTime.substring(0, newTime.length -3);
       section.innerHTML= Object.content.rendered;
         clone.querySelector('img').src=Object._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
         h4.textContent = Object.rating;

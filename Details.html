@@ -54,7 +54,14 @@
             document.querySelector("h1").textContent = object.title.rendered;
             document.querySelector('img').src = object._embedded["wp:featuredmedia"][0].source_url;
             document.querySelector(".description").innerHTML = object.longdescription;
-            document.querySelector('h2').textContent = "Tournament on:" + " " + object.time;
+                    let newTime = object.time;
+
+            document.querySelector('h2').textContent = "Tournament on:" + " " + newTime.substring(0, newTime.length -3);
+
+
+            clone.querySelector('h3').innerHTML = newTime.substring(0, newTime.length -3);
+
+
             document.querySelector("h3").textContent = "Location:" + " " + object.location;
             document.querySelector('h4').textContent = "Available players:" + " " +" " +object.participants;
 
