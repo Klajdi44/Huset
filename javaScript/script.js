@@ -81,7 +81,7 @@ function show(data){
         const h4 = clone.querySelector('h4');
         const section = clone.querySelector('section');
 
-        clone.querySelector("a").href = "details.html?BoardgameID="+Object.id;
+        clone.querySelector("a").href = "Details.html?BoardgameID="+Object.id;
 
         h1.innerHTML = Object.title.rendered;
         let newTime = Object.time;

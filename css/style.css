@@ -357,6 +357,13 @@ article:hover {
     margin: auto;
     margin-bottom: 10px;
     border: none;
+    background: #fff;
+
+}
+
+.modalButton:hover {
+    cursor: pointer;
+    background: #ececec;
 
 }
 
@@ -427,6 +434,13 @@ article:hover {
     text-align: center;
 }
 
+#checkbox {
+    float: right;
+    transform: translateY(.8em);
+    margin-right: 1em;
+
+
+}
 
 
 @media all and (min-width: 800px) {
@@ -504,5 +518,12 @@ article:hover {
 
 
 
+#checkbox {
+    transform: translateY(.8em);
+    margin-right: 8em;
+
 
 }
+
+}
+
