@@ -89,21 +89,27 @@ function show(data){
         clone.querySelector('h3').innerHTML = newTime.substring(0, newTime.length -3);
       section.innerHTML= Object.content.rendered;
         clone.querySelector('img').src=Object._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+
         h4.textContent = Object.rating;
 
+    if(Object.rating <=5){
+   h4.style.background = 'red';
+            h4.style.color = "#fff";
+
+ } else if(Object.rating <=7){
+     h4.style.background = 'orange';
+         h4.style.color = "#fff";
+
+
+}else{
+         h4.style.background = 'green';
+    h4.style.color = "#fff";
+}
 
 
 
-//
-//    if(h4 <=5){
-//   document.querySelector('h4').style.color = 'red';
-//
-//
-// }else if (h4 <=7){
-// document.querySelector('h4').style.color = 'orange';
-//
-// }else {document.querySelector('h4').style.color = 'green';
-// }
+
+
 
 
         //_embedded[""wp:featuredmedia""][""0""].author get the author

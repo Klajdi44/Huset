@@ -32,42 +32,26 @@
 
 
 
-
-
-
-
-
-
-
     <script>
         //take the link
         const baseLink = "http://www.lasimi.com/lasimi/kea2/wp-json/wp/v2/boardgame/";
         const URLparam = new URLSearchParams(window.location.search);
         const BoardgameID = URLparam.get("BoardgameID");
-
         //console.log(baseLink+BoardgameID+"?_embed");
-
         fetch(baseLink + BoardgameID + "?_embed").then(e => e.json()).then(showBoardGame);
-
         function showBoardGame(object) {
             console.log(object);
             document.querySelector("h1").textContent = object.title.rendered;
             document.querySelector('img').src = object._embedded["wp:featuredmedia"][0].source_url;
             document.querySelector(".description").innerHTML = object.longdescription;
                     let newTime = object.time;
-
             document.querySelector('h2').textContent = "Tournament on:" + " " + newTime.substring(0, newTime.length -3);
+            document.querySelector('h3').innerHTML = newTime.substring(0, newTime.length -3);
 
+            document.querySelector(".location").textContent = "Location:" + " " + object.location;
 
-            clone.querySelector('h3').innerHTML = newTime.substring(0, newTime.length -3);
-
-
-            document.querySelector("h3").textContent = "Location:" + " " + object.location;
             document.querySelector('h4').textContent = "Available players:" + " " +" " +object.participants;
-
-
         }
-
     </script>
 
 
