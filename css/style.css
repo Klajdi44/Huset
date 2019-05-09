@@ -450,6 +450,10 @@ article:hover {
     margin-left:1em;
 }
 
+ .wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+    }
 
 @media all and (min-width: 800px) {
 
