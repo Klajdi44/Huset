@@ -442,18 +442,25 @@ article:hover {
 
 }
 
+nav  ul li{
+    margin: .1em;
+    background: #000;
+    color: #fff;
+    padding: .8em;
+    width: 100%;
+    font-size:1.3em;
 
-.buttonLabel {
-    font-size:1.6em;
-    margin:0;
-    padding:0;
-    margin-left:1em;
 }
 
- .wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
-    }
+
+span {
+font-size: 1.5em;
+
+}
+
+
+
+
 
 @media all and (min-width: 800px) {
 
@@ -533,6 +540,20 @@ article:hover {
 #checkbox {
     transform: translateY(.8em);
     margin-right: 8em;
+
+
+}
+    nav  ul li{
+     display: inline;
+        width: 100%;
+
+
+
+}
+    ul{
+    text-align: center;
+        transform: translateX(-8.5em);
+
 
 
 }
