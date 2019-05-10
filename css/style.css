@@ -435,7 +435,6 @@ article:hover {
 }
 
 #checkbox {
-    float: right;
     transform: translateY(.8em);
     margin-right: 1em;
 
@@ -457,9 +456,34 @@ span {
 font-size: 1.5em;
 
 }
+.span1{
+margin-right: .3em;
+}
 
 
+.review {
+     margin: .1em;
+    background: #008800;
+    color: #fff;
+    padding: .4em;
+    width: 45%;
+    font-size:1em;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
 
+}
+
+.chat {
+     margin: .1em;
+    background: #2a70b7;
+    color: #fff;
+    padding: .4em;
+    width: 45%;
+    font-size:1em;
+        border-radius: 50px;
+
+}
 
 
 @media all and (min-width: 800px) {
@@ -538,6 +562,7 @@ font-size: 1.5em;
 
 
 #checkbox {
+  float: right;
     transform: translateY(.8em);
     margin-right: 8em;
 
@@ -557,6 +582,30 @@ font-size: 1.5em;
 
 
 }
+    .review {float: right;
+        text-align: center;
+        width: 30%;
+
+
 
 }
+
+.chat {
+    float: right;
+   text-align: center;
+    width: 30%;
+}
+
+    .descriptionInside{
+transform: translateY(-5em);
+}
+    .adjuster {
+        transform: translateX(-10em);
+
+}
+
+
+}
+
+
 

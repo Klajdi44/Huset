@@ -11,7 +11,7 @@
 
 <body id="bodyDetails">
 
-    <a href="index.html"> <button class="buttonW"> &laquo;Back </button></a>
+    <a href="index.html"> <button class="buttonW">&#x25c1;Back </button></a>
     <main id="main">
         <h1 class="h1Title">title</h1>
         <div class="imgDetails">
@@ -30,7 +30,15 @@
 
         </div>
 
-        <div class="description"></div>
+        <div class="description">
+            <h4 class="descriptionInside"></h4>
+            <div class="adjuster">
+            <button class="review"><span>&#x2606;</span> Review Game</button>
+             <button class="chat"><span class="span1">&#x1f4ac;</span>Chat</button>
+            </div>
+
+        </div>
+
 
 
     </main>
@@ -49,7 +57,7 @@
             console.log(object);
             document.querySelector("h1").textContent = object.title.rendered;
             document.querySelector('img').src = object._embedded["wp:featuredmedia"][0].source_url;
-            document.querySelector(".description").innerHTML = object.longdescription;
+            document.querySelector(".descriptionInside").innerHTML = object.longdescription;
             let newTime = object.time;
             document.querySelector('h2').textContent = "Tournament on:" + " " + newTime.substring(0, newTime.length - 3);
             document.querySelector('h3').innerHTML = newTime.substring(0, newTime.length - 3);
